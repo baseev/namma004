@@ -28,6 +28,12 @@ DATABASES = {
     }
 }
 
+
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/profile/'
+
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -123,6 +129,7 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django.contrib.humanize',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -131,6 +138,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'djcelery',
+    'registration',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -143,8 +151,15 @@ PROJECT_APPS = (
 
 INSTALLED_APPS += PROJECT_APPS
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL='/profile/'
+
+
+ACCOUNT_ACTIVATION_DAYS=7
+EMAIL_HOST='localhost'
+EMAIL_PORT=1025
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
+
+
 
 
 

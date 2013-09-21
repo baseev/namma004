@@ -16,6 +16,7 @@ class PostType(models.Model):
 #    
 class UserPost(models.Model):
     content         = models.TextField()
+    image           = models.ImageField(upload_to="images/posts/")
     user            = models.ForeignKey(User)
     post_type       = models.ForeignKey(PostType)
     created         = models.DateTimeField(default=None)
