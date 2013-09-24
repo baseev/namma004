@@ -12,10 +12,15 @@ def Profile(request):
     return render_to_response('profile.html', context, context_instance=RequestContext(request)) 
     
 
+@login_required
+def MyPosts(request):
+    profile    = request.user
+    context = {'profile' : profile, 'a' : 'b'}   
 
-
-
-    
+@login_required
+def Home(request):
+    profile    = request.user
+    context = {'profile' : profile, 'a' : 'b'}  
     
     
     
