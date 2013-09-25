@@ -14,7 +14,11 @@ def Home(request):
 @login_required
 def Profile(request):
     user    = request.user
-    profile = UserProfile.objects.get(user=user)
+    profile = None
+    try:
+        profile = UserProfile.objects.get(user=user)
+    except:
+        pass
     context = {'profile' : profile, 'a' : 'b'}     
     return render_to_response('profile.html', context, context_instance=RequestContext(request)) 
     
