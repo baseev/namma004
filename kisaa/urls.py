@@ -9,10 +9,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'kisaa.views.home', name='home'),
     # url(r'^kisaa/', include('kisaa.foo.urls')),
 
-    url(r'^', include('main.urls')), 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
-      
+    url(r'^accounts/', include('registration.urls')),
+    url(r'^', include('main.urls')), 
     
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

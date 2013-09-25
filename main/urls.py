@@ -8,9 +8,9 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'kisaa.views.home', name='home'),
     # url(r'^kisaa/', include('kisaa.foo.urls')),
-    url(r'^my-profile/$', 'main.views.Profile'),
-    url(r'^my-posts/$', 'main.views.MyPosts'),
-    url(r'^$', 'main.views.Home'),
+    url(r'my-profile/$', 'main.views.Profile'),
+    url(r'my-posts/$', 'main.views.MyPosts'),
+    url(r'home/$', 'main.views.Home'),
     
     
     # Uncomment the admin/doc line below to enable admin documentation:
