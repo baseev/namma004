@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import PostType, UserPost, UserComment, UserPostLike, UserCommentLike, SpamComment, SpamPost, UserScore, UserProfile
+from kisaa.models import PostType, UserPost, UserComment, UserPostLike, UserCommentLike, SpamComment, SpamPost, UserScore, UserProfile
 
 
 # Admin Views

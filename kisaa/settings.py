@@ -147,6 +147,7 @@ INSTALLED_APPS = (
 
 PROJECT_APPS = (
     'kisaa',
+    'main',
 )
 
 INSTALLED_APPS += PROJECT_APPS
