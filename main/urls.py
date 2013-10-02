@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # url(r'^kisaa/', include('kisaa.foo.urls')),
     url(r'my-profile/$', 'main.views.Profile'),
     url(r'my-posts/$', 'main.views.MyPosts'),
+    url(r'view-my-post/$', 'main.views.ViewMyPost'),
+    url(r'edit-my-post/$', 'main.views.EditMyPost'),
     url(r'home/$', 'main.views.Home'),
     
     

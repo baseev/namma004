@@ -1,0 +1,11 @@
+<p>
+<a href="/myposts/">My Posts</a>
+<a href="/accounts/password/change/">Password Change</a>
+<a href="/accounts/logout/">Logout</a>
+
+{% for post in posts %}
+ <a href="/view-my-post?post-id={{post.id}}">{{post.content}}</a>
+{% endfor %}
+
+
+</p>
