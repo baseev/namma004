@@ -2,7 +2,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
-from main.models import UserProfile, UserPost
+from main.models import UserProfile
+
 
 @login_required
 def Home(request):
@@ -23,62 +24,3 @@ def Profile(request):
     return render_to_response('profile.html', context, context_instance=RequestContext(request)) 
     
 
-@login_required
-def MyPosts(request):
-    user    = request.user
-    posts   = UserPost.objects.filter(user=user); 
-    context = {'posts' : posts, 'a' : 'b'}  
-    return render_to_response('posts/my-posts.html', context, context_instance=RequestContext(request))   
-
-
-
-@login_required
-def ViewMyPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))   
-
-
-@login_required
-def EditMyPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))   
-
-
-@login_required
-def SaveEditPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))   
-
-
-@login_required
-def AddNewPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))
-
-@login_required
-def SaveNewPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))
-    
-    
-
-@login_required
-def DeletePost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
-    return render_to_response('posts/view-my-post.html', context, context_instance=RequestContext(request))
-
-
-    
-    
