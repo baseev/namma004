@@ -22,11 +22,11 @@ def MyPosts(request):
 
 
 
-@login_required
+#@login_required
 def ViewMyPost(request):
-    user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
-    context = {'post' : post, 'a' : 'b'}  
+   # user    = request.user
+   # post   = UserPost.objects.get(id=request.GET['post-id']); 
+    context = {'post' : 'P', 'a' : 'b'}  
     return render_to_response('activity/view-my-post.html', context, context_instance=RequestContext(request))   
 
 
@@ -36,10 +36,9 @@ def Test(request):
     post   = UserPost.objects.get(id=request.GET['post-id']); 
     context = {'post' : post, 'a' : 'b'}  
     d = render_to_string('activity/view-my-post.html', context);
-    data = {'html': d}
-    return HttpResponse(json.dumps(data), mimetype="application/json")
-
-
+    data = {'html': d}    
+    return HttpResponse(json.dumps(data), mimetype="text/html")
+    #return HttpResponse(json.dumps(data), mimetype="application/json")
 
 
 @login_required
@@ -53,7 +52,10 @@ def EditMyPost(request):
 @login_required
 def SaveEditPost(request):
     user    = request.user
-    post   = UserPost.objects.get(id=request.GET['post-id']); 
+    post   = UserPost.objects.get(id=request.POST['post-id']) 
+    post.content = request.POST['post-content']
+    post.post_type = request.POST['post-type']
+    post.save()
     context = {'post' : post, 'a' : 'b'}  
     return render_to_response('activity/view-my-post.html', context, context_instance=RequestContext(request))   
 

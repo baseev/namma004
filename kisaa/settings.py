@@ -115,6 +115,54 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.yahoo.YahooBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'social_auth.context_processors.social_auth_by_type_backends',
+)
+
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    #'social_auth.backends.pipeline.associate.associate_by_email',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+    'social_auth.backends.pipeline.user.update_user_details',
+    'utils.tasks.welcome_new_user',
+)
+
+
+
+YAHOO_CONSUMER_KEY = ''
+YAHOO_CONSUMER_SECRET = ''
+
+TWITTER_CONSUMER_KEY = '05JFhgAI8uCywTBzqP9A'
+TWITTER_CONSUMER_SECRET = 'gvllGrpHB7wXtC7lJ7UDAZKjwKNpPVGXbUvCHv6foe4'
+
+FACEBOOK_APP_ID = '528626020559857'
+FACEBOOK_API_SECRET = '3f7e24b3066f727ca2b2ca6eb62ffff3'
+    
+    
+
+GOOGLE_OAUTH2_CLIENT_ID = '844342251154.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'hcv1j7rJHAKuNyU0Ei6np37R'
+
+
+
 ROOT_URLCONF = 'kisaa.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -139,6 +187,7 @@ INSTALLED_APPS = (
     'south',
     'djcelery',
     'registration',
+    'social_auth',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -165,7 +214,7 @@ EMAIL_HOST_PASSWORD=''
 
 
 
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+#SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

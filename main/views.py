@@ -21,6 +21,6 @@ def Profile(request):
     except:
         pass
     context = {'profile' : profile, 'a' : 'b'}     
-    return render_to_response('profile.html', context, context_instance=RequestContext(request)) 
+    return render_to_response('main/profile.html', context, context_instance=RequestContext(request)) 
     
 
