@@ -60,6 +60,7 @@ def tweet_on_join(oauth_token, oauth_secret):
 """
 Registration profile added
 """
+@task
 def create_registration_profile(user):
     
     salt = hashlib.sha1(str(random.random())).hexdigest()[:5]

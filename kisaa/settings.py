@@ -32,7 +32,9 @@ DATABASES = {
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 LOGIN_REDIRECT_URL = '/profile/'
-
+LOGIN_ERROR_URL    = '/accounts/login/'
+SOCIAL_AUTH_BACKEND_ERROR_URL = '/channel-error/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-social-user/'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -111,6 +113,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'social_auth.middleware.SocialAuthExceptionMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -156,7 +159,7 @@ TWITTER_CONSUMER_SECRET = 'gvllGrpHB7wXtC7lJ7UDAZKjwKNpPVGXbUvCHv6foe4'
 FACEBOOK_APP_ID = '528626020559857'
 FACEBOOK_API_SECRET = '3f7e24b3066f727ca2b2ca6eb62ffff3'
     
-    
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']   
 
 GOOGLE_OAUTH2_CLIENT_ID = '844342251154.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'hcv1j7rJHAKuNyU0Ei6np37R'
@@ -198,6 +201,7 @@ PROJECT_APPS = (
     'kisaa',
     'main',
     'activity',
+    'company',
 )
 
 INSTALLED_APPS += PROJECT_APPS

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import PostType, UserScore
+from company.models import CompanyProfile
 
 # Admin Views
 class PostTypeAdmin(admin.ModelAdmin):
@@ -7,5 +7,5 @@ class PostTypeAdmin(admin.ModelAdmin):
 
 
 # Added to Admin View
-admin.site.register(PostType, PostTypeAdmin)
-admin.site.register(UserScore)
+admin.site.register(CompanyProfile)
+

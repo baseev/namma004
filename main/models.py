@@ -25,15 +25,3 @@ class UserScore(models.Model):
 #         return self.user.join(" - ").join(self.score)
 
 
-
-class UserProfile(models.Model):
-    user            = models.ForeignKey(User)
-    first_name      = models.CharField(max_length=250)
-    last_name       = models.CharField(max_length=250)
-    created         = models.DateTimeField(default=None)
-    updated         = models.DateTimeField(default=datetime.datetime.now())
-    deleted_flag    = models.SmallIntegerField(default=0)
-
-#     def __unicode__(self):
-#         return self.user
-

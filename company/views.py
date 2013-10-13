@@ -16,16 +16,3 @@ def Profile(request):
     user    = request.user
     context = {'user' : user, 'a' : 'b'}     
     return render_to_response('main/profile.html', context, context_instance=RequestContext(request)) 
-    
-
-def ChannelError(request):
-    context = {'user' : 'user', 'a' : 'b'}     
-    return render_to_response('main/channel-error.html', context, context_instance=RequestContext(request)) 
-
-
-@login_required
-def NewSocialUser(request):
-    context = {'user' : 'user', 'a' : 'b'}     
-    return render_to_response('main/new-social-user.html', context, context_instance=RequestContext(request)) 
-
-    
