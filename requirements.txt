@@ -1,0 +1,10 @@
+django-celery
+django==1.5
+pil
+twython
+facebook-sdk
+django-registration
+django-social-auth
+google-api-python-client
+south
+mysql python egg
