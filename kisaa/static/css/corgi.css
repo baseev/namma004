@@ -16,6 +16,7 @@ body.hayball {
 	border: none;
 	opacity: 0.9;
 	filter: none;
+	box-shadow: 0 0 5px 1px #ddd;
 }
 .navbar .brand {
 	font-family: 'Raleway', sans-serif;
@@ -110,7 +111,7 @@ body.hayball {
 .feed_text {
 	float: left;
 	width: 80%;
-	font-size: 18px;
+	font-size: 14px;
 	color: #666;
 }
 .bottom_meta {

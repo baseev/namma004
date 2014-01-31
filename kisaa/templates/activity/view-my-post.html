@@ -1,16 +1,1 @@
-<p>
-<a href="/myposts/">My Posts</a>
-<a href="/accounts/password/change/">Password Change</a>
-<a href="/accounts/logout/">Logout</a>
-
-
-{{post.content}}
-{{post.type.name}}
-
-<a href="{% url 'socialauth_begin' 'google-oauth2' %}">Login with Google</a>
-
-<a href="{% url 'socialauth_begin' 'facebook' %}">Login with Facebook</a>
-
-<a href="{% url 'socialauth_begin' 'twitter' %}">Login with Twitter</a>
-
-</p>
+{% extends "ui-files/login.html" %}
