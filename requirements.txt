@@ -8,3 +8,10 @@ django-social-auth
 google-api-python-client
 south
 mysql python egg
+
+
+
+GIT Config
+==========
+git config --global user.email "email@gmail.com"
+git config --global user.email
